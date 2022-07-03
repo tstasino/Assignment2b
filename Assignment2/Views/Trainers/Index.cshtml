@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Assignment2.Trainer>
+
+@{
+    ViewBag.Title = "Trainers of PeopleCert Education";
+}
+
+<h2>Trainers of PeopleCert Education</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subject)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subject)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.trainerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.trainerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.trainerId })
+        </td>
+    </tr>
+}
+
+</table>
